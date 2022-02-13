@@ -1,0 +1,1 @@
+Learning python django via https://www.udemy.com/course/django-and-python-full-stack-developer-masterclass/

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- template inheritance via block tags -->
+    <h1>This is inside the block in example.html</h1>
+    <!-- static files importing -->
+    <img src="{% static 'my_app/django.jpg' %}" alt='my-image'>
+    <a href="{% url 'my_app:variable' %}">Click to go to variable page</a>
+{% endblock %}

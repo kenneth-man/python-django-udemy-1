@@ -1,0 +1,40 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- accessing variables in html template (from views.py) -->
+        <h1>variable.html</h1>
+
+        <h2>{{some_list.0}}</h2>
+        <h2>{{some_dict.inside_key}}</h2>
+
+        <!-- (using django filters) -->
+        <h2>Her first name is {{first_name | lower | capfirst}} which contains {{first_name | length}} letters, her last name is {{last_name}}</h2>
+        
+        <!-- (using django tags) -->
+        <!-- for in tags -->
+        {% for item in some_list %}
+            <h1>{{item}}</h1>
+        {% endfor %}
+
+        <ul>
+            {% for key,value in some_dict.items %}
+                <li>{{key}}:{{value}}</li>
+            {% endfor %}
+        </ul>
+
+        <!-- if, else tags -->
+        {% if user_logged_in %}
+            <h1>Welcome back you are logged in</h1>
+        {% else %}
+            <h1>You are not logged in
+        {% endif %}
+
+        <!-- Url tags -->
+        <a href="{% url 'my_app:example' %}">Click to go to example page</a>
+    </body>
+</html>
